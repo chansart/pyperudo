@@ -6,6 +6,9 @@ class Player:
         self.name = name
         self.dice = self.rollingDice()
         
+    def get_name(self):
+        return self.name
+        
     def rollingDice(self, howManyDice=5):
         '''
         This function returns a list containing the values for player's dice
