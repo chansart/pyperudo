@@ -2,7 +2,8 @@ import random
 
 class Player: 
     
-    def __init__(self):
+    def __init__(self, name):
+        self.name = name
         self.dice = self.rollingDice()
         
     def rollingDice(self, howManyDice=5):
@@ -33,6 +34,6 @@ class Player:
     
     
 if __name__ == '__main__':
-    p = Player()
+    p = Player('Carlotta')
     print(p)
     print(p.dice)
