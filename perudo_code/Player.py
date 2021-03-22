@@ -10,7 +10,7 @@ class Player:
     def get_name(self):
         return self.name
     
-    def display_dice(self):
+    def get_dice(self):
         return self.dice
         
     def rollingDice(self, howManyDice):
