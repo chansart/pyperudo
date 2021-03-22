@@ -2,14 +2,18 @@ import random
 
 class Player: 
     
-    def __init__(self, name):
+    def __init__(self, name, howManyDice=5):
         self.name = name
-        self.dice = self.rollingDice()
+        self.num_dice = 5
+        self.dice = self.rollingDice(howManyDice=5)
         
     def get_name(self):
         return self.name
+    
+    def display_dice(self):
+        return self.dice
         
-    def rollingDice(self, howManyDice=5):
+    def rollingDice(self, howManyDice):
         '''
         This function returns a list containing the values for player's dice
         
@@ -21,19 +25,9 @@ class Player:
         '''
         dice = []
         for i in range(howManyDice):
-            dice.append(self.rollingDie())
+            dice.append(random.randint(1, 6))
             
-        return dice   
-        
-    def rollingDie(self):
-        '''
-        This function returns one integer between 1 and 6. 
-        
-        Args: None
-        
-        Returns: integer
-        '''
-        return random.randint(1, 6)
+        return sorted(dice)
     
     
 if __name__ == '__main__':
